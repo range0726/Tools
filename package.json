@@ -1,0 +1,19 @@
+{
+  "name": "bakhelper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ray Yang",
+  "license": "ISC",
+  "dependencies": {
+    "archiver": "^5.3.1",
+    "express": "^4.18.2",
+    "glob": "^10.2.6",
+    "moment": "^2.29.4",
+    "zip-local": "^0.3.5",
+    "zlib": "^1.0.5"
+  }
+}
