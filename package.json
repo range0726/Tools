@@ -4,10 +4,13 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "build": "node app.js",
+    "start":"node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Ray Yang",
+  "engines": {
+    "node": "18.x"
+  },
+  "author": "RY",
   "license": "ISC",
   "dependencies": {
     "archiver": "^5.3.1",
