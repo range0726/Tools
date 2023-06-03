@@ -4,10 +4,17 @@ const zip = require('zip-local');
 const path = require('path');
 var archiver = require('archiver');
 const express = require('express');
+const http = require('http');
+
 const app = express();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+const server = http.createServer((req, res)=>{
+  res.writeHead(200, {"Content-Type":"text.plain"})
+  res.end("Hello world!");
+})
 
 app.get('/', (req, res) => {
   res.send(`
@@ -68,7 +75,8 @@ app.post('/submit', (req, res) => {
     `);
 });
 
-app.listen(3000, () => {
+// app.listen(3000, () => {
+server.listen(3000, () => {
   console.log('Server started on port 3000');
 });
 
@@ -112,18 +120,5 @@ function archiveFolders(destinationPath){
 
   archive.finalize();
 }
-
-function main(clientSource, serverSource, databaseSource, destination) {
-  // const sources = [
-  //   { name: 'Client', path: './source/Folder_1' },
-  //   { name: 'Service', path: './source/src' },
-  //   { name: 'Database', path: './source/src' },
-  // ];
-  // const destinationPath = './destination';
-}
-
-
-// main();
-
 
 
